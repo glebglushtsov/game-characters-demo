@@ -1,0 +1,16 @@
+.actionsBar {
+  margin: 20px;
+  display: inline-block;
+}
+
+.actionsBar button {
+  background-color: #d9dee0;
+  color: #435058;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.actionsBar button:last-child {
+  margin-right: 0;
+}
