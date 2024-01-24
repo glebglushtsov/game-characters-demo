@@ -1,12 +1,14 @@
 import { useCharactersState } from "../characters-context";
 import Card from "./card";
 
+import styles from './characters-grid.module.css';
+
 function CharactersGrid() {
   const characters = useCharactersState();
-  console.log('CharactersGrid', characters);
+  console.log('CharactersList', characters);
 
   return (
-    <div>
+    <div className={styles.charactersGrid}>
       {characters.map(data => <Card key={data.id} {...data} />)}
     </div>
   );

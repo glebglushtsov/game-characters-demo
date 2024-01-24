@@ -1,47 +1,54 @@
 import { useCharactersDispatch } from "../../characters-context";
 
+
 import styles from './card.module.css';
 
 function Card({ id, health, attack, defense, image }) {
   const dispatch = useCharactersDispatch();
   console.log(`Character ${id}`, { health, attack, defense });
 
-  function handleCharacterChange(payload) {
-    dispatch({ type: 'update', payload });
-  }
-
   function handleCharacterRemove() {
     dispatch({ type: 'delete', payload: { id } })
+  }
+
+  function handleCharacterChange(payload) {
+    dispatch({ type: 'update', payload });
   }
 
   return (
     <div className={styles.cardRoot}>
       <div>
-        <div>Health {health}</div>
-
-        <button className={styles.cardRemoveBtn} onClick={handleCharacterRemove}>X</button>
-
-        <div>
-          <button onClick={() => handleCharacterChange({ id, health: health - 1, attack, defense })}>-</button>
-          <button onClick={() => handleCharacterChange({ id, health: health + 1, attack, defense })}>+</button>
-        </div>
+        <img className={styles.cardImage} src={image.url} />
       </div>
 
-      <div>
-        <div>Attack {attack}</div>
+      <button className={styles.cardRemoveBtn} onClick={handleCharacterRemove}>X</button>
 
+      <div className={styles.cardActions}>
         <div>
-          <button onClick={() => handleCharacterChange({ id, health, attack: attack - 1, defense })}>-</button>
-          <button onClick={() => handleCharacterChange({ id, health, attack: attack + 1, defense })}>+</button>
+          <div>Health {health}</div>
+
+          <div>
+            <button className={styles.decrement} onClick={() => handleCharacterChange({ id, health: health - 1, attack, defense })}>-</button>
+            <button className={styles.increment} onClick={() => handleCharacterChange({ id, health: health + 1, attack, defense })}>+</button>
+          </div>
         </div>
-      </div>
-
-      <div>
-        <div>Defense {defense}</div>
 
         <div>
-          <button onClick={() => handleCharacterChange({ id, health, attack, defense: defense - 1 })}>-</button>
-          <button onClick={() => handleCharacterChange({ id, health, attack, defense: defense + 1 })}>+</button>
+          <div>Attack {attack}</div>
+
+          <div>
+            <button className={styles.decrement} onClick={() => handleCharacterChange({ id, health, attack: attack - 1, defense })}>-</button>
+            <button className={styles.increment} onClick={() => handleCharacterChange({ id, health, attack: attack + 1, defense })}>+</button>
+          </div>
+        </div>
+
+        <div>
+          <div>Defense {defense}</div>
+
+          <div>
+            <button className={styles.decrement} onClick={() => handleCharacterChange({ id, health, attack, defense: defense - 1 })}>-</button>
+            <button className={styles.increment} onClick={() => handleCharacterChange({ id, health, attack, defense: defense + 1 })}>+</button>
+          </div>
         </div>
       </div>
     </div>
@@ -49,3 +56,4 @@ function Card({ id, health, attack, defense, image }) {
 }
 
 export default Card;
+// export default memo(Character); // could be memoized if we need to optimize re-rednerings of individual list items
