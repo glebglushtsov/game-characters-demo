@@ -17,7 +17,7 @@ function CharactersProvider({ initialValue = [], children }) {
 
 function charactersReducer(state, action) {
   const { type, payload } = action;
-  // console.log(action);
+  console.log(action);
 
   switch (type) {
     case 'create':
