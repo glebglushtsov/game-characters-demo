@@ -1,3 +1,5 @@
+# Take Home Interview Exercise
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -29,42 +31,78 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Introduction
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**COMPLETION TIME:** 2 hours
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Below are specifications for the style and behavior of the `mockup.png` in this same directory. The task is to recreate that mockup with the specified behavior below. You can use any framework that is comfortable for you or... no framework at all! (React is preferred as that is what our tech stack is based on). The goal is to present a functioning application to our developers and be prepared to answer any questions we may have about your approach and potentially how this application can be extended in its functionality.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**IMPORTANT:** If you are using a framework, please use a scaffolding tool to build out your project such as [Create React App](https://create-react-app.dev/) or [Vite](https://vitejs.dev/) to ensure you spend the 2 hours developing the requested functionality instead of configuring a build system for the project.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Style Specifications
 
-## Learn More
+There is a convenience css file to set up some initial global styles for the app.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Things to Ignore:
+* Icons in actions as top
+* Determing if a button should be disabled based on the stat value
+* Varying font colors within a card
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### General Layout
+* Global actions at the top - "Add Character", "Attack all characters"
+* Background: #182432
+* Content Container - 80% with a max width of 1500px (mockup is off center, but it should be centered on the page)
 
-### Code Splitting
+### Card Layout
+* Should be rows of 3 cards
+* Each card should have a fluid width based on the container's size
+* All cards should be the same width regardless of whether or not they are the only card in the row
+* Even spacing between cards
+* Left edge cards should line up with top global actions
+* Each card, regardless of height, should be the same height as other cards in the row
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Bonus:
+    * Screen width 900px and down - display 2 cards per row
+    * Screen Width 580px and down - display 1 card per row
 
-### Analyzing the Bundle Size
+### Card:
+* Background: #283243
+* Curved edges with 1px border all the way around
+    * Border: 1px #4F5E74
+    * 4px Rounded Corners
+* 20px horizontal and vertical padding between cards
+* Randomized header images (based on images provided)
+* Content - Health, Attack, and Defense Trackers with +/- buttons aligned to right
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Card Contents:
+* 16px left/right padding
+* 20px top/bottom padding
+* Bonus: Align to bottom of card
 
-### Making a Progressive Web App
+### Button Increment
+* Border radius: 2px
+* Background: #4CAF50
+* Background Hover: #419A45
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Button Decrement
+* Border radius: 2px
+* Background: #F95359
+* Background Hover: #ED3C39
 
-### Advanced Configuration
+## Behavior Specifications
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**NOTE**: Stat values can go below zero
 
-### Deployment
+### Stats:
+* Health: Plus (+) button should increase health by 1 for corresponding character
+* Health: Minus (-) button should decrease health by 1 for corresponding character
+* Attack: Plus (+) button should increase attack by 1 for corresponding character
+* Attack: Minus (-) button should decrease attack by 1 for corresponding character
+* Defense: Plus (+) button should increase defense by 1 for corresponding character
+* Defense: Minus (-) button should decrease defense by 1 for corresponding character
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Bonus: Add 'x' to top right of character card that removes the character from the list
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Global Actions:
+* **Add Character**: Should add a character to list with all stats set to zero. Image for character should be randomized based on the 3 provided
+* **Attack all characters**: Set all characters Health stat to zero
