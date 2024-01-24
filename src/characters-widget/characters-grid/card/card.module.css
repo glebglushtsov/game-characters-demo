@@ -1,0 +1,14 @@
+.cardRoot {
+  position: relative;
+  overflow: hidden;
+  border: solid 1px var(--card-border);
+  border-radius: 4px;
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardImage {
+  width: 100%;
+}

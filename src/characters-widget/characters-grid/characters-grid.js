@@ -1,4 +1,4 @@
-import { useCharactersState } from "./characters-context";
+import { useCharactersState } from "../characters-context";
 import Card from "./card";
 
 function CharactersGrid() {
