@@ -1,4 +1,4 @@
-.charactersGrid {
+.root {
   display: grid;
   /* grid-template-columns: repeat(auto-fit, minmax(225px, 1fr)); */ /* will autotomatically create columns as we expand */
   grid-template-columns: repeat(1, 1fr);
@@ -7,13 +7,13 @@
 }
 
 @media (min-width: 580px) {
-  .charactersGrid {
+  .root {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (min-width: 900px) {
-  .charactersGrid {
+  .root {
     grid-template-columns: repeat(3, 1fr);
   }
 }

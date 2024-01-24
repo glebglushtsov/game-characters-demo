@@ -5,7 +5,7 @@ import styles from './card.module.css';
 
 function Card({ id, health, attack, defense, image }) {
   const dispatch = useCharactersDispatch();
-  console.log(`Character ${id}`, { health, attack, defense });
+  // console.log(`Card ${id}`, { health, attack, defense });
 
   function handleCharacterRemove() {
     dispatch({ type: 'delete', payload: { id } })
@@ -16,12 +16,12 @@ function Card({ id, health, attack, defense, image }) {
   }
 
   return (
-    <div className={styles.cardRoot}>
+    <div className={styles.root}>
       <div>
-        <img className={styles.cardImage} src={image.url} />
+        <img className={styles.characterImage} src={image.url} />
       </div>
 
-      <button className={styles.cardRemoveBtn} onClick={handleCharacterRemove}>X</button>
+      <button className={styles.removeBtn} onClick={handleCharacterRemove}>X</button>
 
       <div className={styles.cardActions}>
         <div>

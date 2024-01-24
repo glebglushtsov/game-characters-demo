@@ -5,10 +5,10 @@ import styles from './characters-grid.module.css';
 
 function CharactersGrid() {
   const characters = useCharactersState();
-  console.log('CharactersList', characters);
+  // console.log('CharactersGrid', characters);
 
   return (
-    <div className={styles.charactersGrid}>
+    <div className={styles.root}>
       {characters.map(data => <Card key={data.id} {...data} />)}
     </div>
   );

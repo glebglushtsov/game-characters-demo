@@ -1,9 +1,9 @@
-.actionsBar {
+.root {
   margin: 20px;
   display: inline-block;
 }
 
-.actionsBar button {
+.root button {
   background-color: #d9dee0;
   color: #435058;
   border-radius: 4px;
@@ -11,6 +11,6 @@
   cursor: pointer;
 }
 
-.actionsBar button:last-child {
+.root button:last-child {
   margin-right: 0;
 }

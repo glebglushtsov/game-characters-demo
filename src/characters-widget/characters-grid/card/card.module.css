@@ -1,4 +1,4 @@
-.cardRoot {
+.root {
   position: relative;
   overflow: hidden;
   border: solid 1px var(--card-border);
@@ -9,6 +9,51 @@
   justify-content: space-between;
 }
 
-.cardImage {
+.characterImage {
   width: 100%;
+}
+
+.cardActions {
+  padding: 20px 16px;
+}
+
+.cardActions div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardActions button {
+  border-radius: 2px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.cardActions button.increment {
+  background-color: var(--btn-increment);
+}
+
+.cardActions button.increment:hover {
+  background-color: var(--btn-increment-hover);
+}
+
+.cardActions button.decrement {
+  background-color: var(--btn-decrement);
+}
+
+.cardActions button.decrement:hover {
+  background-color: var(--btn-decrement-hover);
+}
+
+.removeBtn {
+  position: absolute;
+  padding: 0;
+  right: 0;
+  top: 0;
+  background: brown;
+  color: white;
+  width: 24px;
+  height: 24px;
+  font-weight: 800;
+  cursor: pointer;
 }

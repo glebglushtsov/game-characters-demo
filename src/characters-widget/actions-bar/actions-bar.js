@@ -18,7 +18,7 @@ function ActionsBar() {
   }
 
   return (
-    <div className={styles.actionsBar}>
+    <div className={styles.root}>
       <button onClick={handleAddClick}>Add character</button>
       <button onClick={handleAttackAllClick}>Attack all characters</button>
     </div>
