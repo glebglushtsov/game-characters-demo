@@ -1,11 +1,37 @@
+html,
+body {
+  height: 100%;
+}
+
 html {
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  color: #bbbfc5;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.25;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--main-bg-color);
+}
+
+button {
+  color: #fff;
+  padding: 0.625em 1.25em;
+  border-radius: 2px;
+  box-shadow: none;
+  border: 0;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 :root {
@@ -16,31 +42,4 @@ html {
   --btn-increment-hover: #419a45;
   --btn-decrement: #f95359;
   --btn-decrement-hover: #ed3c39;
-}
-
-html,
-body {
-  height: 100%; 
-}
-
-body {
-  margin: 0; 
-}
-
-body {
-  background-color: var(--main-bg-color); 
-}
-
-html {
-  color: #bbbfc5;
-  font-family: "Noto Sans", sans-serif;
-  line-height: 1.25;
-}
-
-button {
-  color: #fff;
-  padding: 0.625em 1.25em;
-  border-radius: 2px;
-  box-shadow: none;
-  border: 0;
 }
