@@ -7,7 +7,7 @@ import styles from './actions-bar.module.css';
 
 function ActionsBar() {
   const dispatch = useCharactersDispatch();
-  console.log('Controls');
+  // console.log('Controls');
 
   function handleAddClick() {
     dispatch({ type: 'create', payload: { id: uuidv4(), health: 0, attack: 0, defense: 0, image: images[Math.floor(Math.random() * 3)] } });
